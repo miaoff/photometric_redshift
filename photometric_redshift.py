@@ -45,7 +45,8 @@ def get_parameters(file_name):
             row.append(cov(i,j))
         mtxmm.append(row)
         
-    #The b_k parameters can be easily retrieved by solving the linear equation.    
+    #The b_k parameters can be easily retrieved by solving the linear equation. 
+    #For more infomation about why this yields b_k, see the pdf file in https://github.com/miaoff/photometric_redshift.git. 
     b_list = np.linalg.solve(mtxmm, covzm)
 
     #b_0 is just mean of redshift minus the sum of b_k times mean of m_k.
